@@ -24,5 +24,12 @@ body{
   bottom: 100px;
   right: calc(100% - 170px);
 }
-
+.obstacle{
+  width: 30px;
+  height: 100px;
+  background-color: burlywood;
+  position: absolute;
+  bottom: 100px;
+  right: 0;
+}
 
