@@ -71,13 +71,15 @@ function jump(){
     obstacles.appendChild(obstacle);
 
 
+    let randomTimeout = Math.floor(Math.random() * 1000) + 1000; 
+
     let obstacleRight = -30;
 
     let obstacleBottom = 100;
 
     let obstacleWidth = 30;
 
-    let obstacleHeight = Math.floor(Math.random() * 50) + 50;
+    let obstacleHeight = Math.floor(Math.random() * 150) + 150;
 
     function moveObstacle(){
       obstacleRight += 5;
@@ -89,10 +91,21 @@ function jump(){
       obstacle.style.width = obstacleWidth + 'px';
 
       obstacle.style.height = obstacleHeight + 'px';
+
+      if(characterRight >= obstacleRight - characterWidth && characterRight <= obstacleRight + obstacleWidth && characterBottom <= obstacleBottom + obstacleHeight){
+
+        alert('Game Over !');
+
+        clearInterval(obstacleInterval);
+
+        clearTimeout(obstacleTimeout);
+        
+        location.reload();
+      }
     }
     let obstacleInterval = setInterval(moveObstacle, 20);
 
-    let obstacleTimeout = setTimeout(generateObstacle, 1000);
+    let obstacleTimeout = setTimeout(generateObstacle, randomTimeout);
 
    }
    generateObstacle();

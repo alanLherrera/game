@@ -26,7 +26,7 @@ body{
 }
 .obstacle{
   width: 30px;
-  height: 100px;
+  height: 150px;
   background-color: burlywood;
   position: absolute;
   bottom: 100px;
