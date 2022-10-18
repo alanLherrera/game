@@ -71,12 +71,17 @@ function jump(){
     score++;
 
     displayScore.innerText = score;
+
+    if(score++) return;
   }
+  console.log(theScore);
+
+
   setInterval(theScore, 100)
 // highest score function
   function keepScore () {
   if(score  > highScore) highScore = score;
-  document.getElementById('highScore').innerText = "highScore" + highScore;
+   displayHighScore.innerText = highScore;
   console.log(keepScore)
   }
   

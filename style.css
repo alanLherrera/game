@@ -39,9 +39,10 @@ h2{
   margin-left: 10px;
   
 }
-#highScore{
+h3{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 120px;
-
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
