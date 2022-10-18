@@ -9,11 +9,11 @@ let characterRight = parseInt(window.getComputedStyle(character).getPropertyValu
 let characterWidth = parseInt(window.getComputedStyle(character).getPropertyValue('width'));
 
 // the ground parameters
-let ground = document.getElementById('ground');
+let floor = document.getElementById('ground');
 
-let groundBottom = parseInt(window.getComputedStyle(ground).getPropertyValue('bottom'));
+let floorBottom = parseInt(window.getComputedStyle(ground).getPropertyValue('bottom'));
 
-let groundHeight = parseInt(window.getComputedStyle(ground).getPropertyValue('height'));
+let floorHeight = parseInt(window.getComputedStyle(ground).getPropertyValue('height'));
 
 // game default start
 let isJumping = false;
@@ -22,34 +22,41 @@ let upTime;
 
 let downTime;
 
+let displayScore = document.getElementById('score');
+
+let score = 0;
+
+let displayHighScore = document.getElementById('highScore')
+
+let highScore = 0;
 // the infamous "jump" function 
 function jump(){
-
+  // allows jumping to re occur
   if(isJumping) return;
-
+  //jump parameters
    upTime = setInterval(() => {
-
-    if(characterBottom >= groundHeight + 350){
-
+   // the height the lil guy will jump
+    if(characterBottom >= floorHeight + 750){
+      
       clearInterval(upTime);
 
        downTime = setInterval(() => {
 
-        if(characterBottom <= groundHeight + 20){
+        if(characterBottom <= floorHeight + 20){
 
           clearInterval(downTime);
 
           isJumping = false;
         }
 
-        characterBottom -= 20;
+        characterBottom -= 35;
 
         character.style.bottom = characterBottom + 'px';
 
        }, 20);
 
     }
-     characterBottom += 20;
+     characterBottom += 40;
 
       character.style.bottom = characterBottom + 'px';
 
@@ -58,6 +65,22 @@ function jump(){
    }, 20);
 
   }
+  // score function
+  function theScore(){
+
+    score++;
+
+    displayScore.innerText = score;
+  }
+  setInterval(theScore, 100)
+// highest score function
+  function keepScore () {
+  if(score  > highScore) highScore = score;
+  document.getElementById('highScore').innerText = "score" + score;
+  console.log(keepScore)
+  }
+  
+  keepScore();
 
    // obstacles
    function generateObstacle(){
@@ -79,10 +102,10 @@ function jump(){
 
     let obstacleWidth = 30;
 
-    let obstacleHeight = Math.floor(Math.random() * 150) + 150;
+    let obstacleHeight = Math.floor(Math.random() * 120) + 120;
 
     function moveObstacle(){
-      obstacleRight += 5;
+      obstacleRight += 15;
 
       obstacle.style.right = obstacleRight + 'px';
 
