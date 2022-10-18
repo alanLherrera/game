@@ -9,11 +9,11 @@ let characterRight = parseInt(window.getComputedStyle(character).getPropertyValu
 let characterWidth = parseInt(window.getComputedStyle(character).getPropertyValue('width'));
 
 // the ground parameters
-let floor = document.getElementById('ground');
+let floor = document.getElementById('floor');
 
-let floorBottom = parseInt(window.getComputedStyle(ground).getPropertyValue('bottom'));
+let floorBottom = parseInt(window.getComputedStyle(floor).getPropertyValue('bottom'));
 
-let floorHeight = parseInt(window.getComputedStyle(ground).getPropertyValue('height'));
+let floorHeight = parseInt(window.getComputedStyle(floor).getPropertyValue('height'));
 
 // game default start
 let isJumping = false;
@@ -76,7 +76,7 @@ function jump(){
 // highest score function
   function keepScore () {
   if(score  > highScore) highScore = score;
-  document.getElementById('highScore').innerText = "score" + score;
+  document.getElementById('highScore').innerText = "highScore" + highScore;
   console.log(keepScore)
   }
   
