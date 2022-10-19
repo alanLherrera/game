@@ -37,18 +37,18 @@ function jump(){
    upTime = setInterval(() => {
    // the height the lil guy will jump
     if(characterBottom >= floorHeight + 750){
-      
+      //resets jump
       clearInterval(upTime);
-
+       //starts fall
        downTime = setInterval(() => {
-
+       // fall speed and jump re allowed 
         if(characterBottom <= floorHeight + 20){
 
           clearInterval(downTime);
 
           isJumping = false;
         }
-
+        // adjust this number for fall speed
         characterBottom -= 35;
 
         character.style.bottom = characterBottom + 'px';
@@ -56,6 +56,7 @@ function jump(){
        }, 20);
 
     }
+    // adjust this number for jump height speed
      characterBottom += 40;
 
       character.style.bottom = characterBottom + 'px';
@@ -80,12 +81,15 @@ function jump(){
   setInterval(theScore, 100)
 // highest score function
   function keepScore () {
+
   if(score  > highScore) highScore = score;
+
    displayHighScore.innerText = highScore;
-  console.log(keepScore)
+
+   console.log(keepScore)
   }
   
-  keepScore();
+  
 
    // obstacles
    function generateObstacle(){
