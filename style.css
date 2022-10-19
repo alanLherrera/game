@@ -33,7 +33,7 @@ body{
   bottom: 100px;
   right: 0;
 }
-h2{
+/*h2{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 50px;
   margin-top: 10px;
@@ -46,7 +46,7 @@ h3{
   margin-top: 10px;
   margin-left: 10px;
 }
-/*#starter{
+#starter{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 200px;
   height: 50px;
@@ -87,3 +87,4 @@ h3{
   display: inline-block;
 
 }
+/*
