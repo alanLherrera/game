@@ -131,7 +131,6 @@ function jump(){
 
       if(characterRight >= obstacleRight - characterWidth && characterRight <= obstacleRight + obstacleWidth && characterBottom <= obstacleBottom + obstacleHeight){
         // this is a PLACEHOLDER
-        gameEnd();
 
         clearInterval(obstacleInterval);
 
