@@ -29,6 +29,9 @@ let score = 0;
 let displayHighScore = document.getElementById('highScore')
 
 let highScore = 0;
+
+
+
 // the infamous "jump" function 
 function jump(){
   // allows jumping to re occur
@@ -73,12 +76,13 @@ function jump(){
 
     displayScore.innerText = score;
 
-    if(score++) return;
+    return score;
   }
   console.log(theScore);
 
 
   setInterval(theScore, 100)
+
 // highest score function
   function keepScore () {
 
@@ -113,7 +117,8 @@ function jump(){
 
     let obstacleHeight = Math.floor(Math.random() * 120) + 120;
 
-    function moveObstacle(){
+     function moveObstacle(){
+      
       obstacleRight += 15;
 
       obstacle.style.right = obstacleRight + 'px';
@@ -125,8 +130,8 @@ function jump(){
       obstacle.style.height = obstacleHeight + 'px';
 
       if(characterRight >= obstacleRight - characterWidth && characterRight <= obstacleRight + obstacleWidth && characterBottom <= obstacleBottom + obstacleHeight){
-
-        alert('Game Over !');
+        // this is a PLACEHOLDER
+        gameEnd();
 
         clearInterval(obstacleInterval);
 
@@ -142,12 +147,45 @@ function jump(){
    }
    generateObstacle();
 
-
+// button for jump
 function control(e){
   if (e.key == 'ArrowUp' || e.key == ' '){
     jump();
   }
 }
+// start screen
+function gameStart(){
+  let theStart = document.getElementById('starter');
+
+  let canvas = document.getElementById('canvas');
+
+  let end = document.getElementById('end');
+
+  theStart.style.display = "none";
+
+  canvas.style.display = "block";
+
+  end.style.display = "none";
+
+  location.reload();
+}
+// end screen
+function gameEnd(){
+  let theStart = document.getElementById('starter');
+
+  let canvas = document.getElementById('canvas');
+
+  let end = document.getElementById('end');
+
+  theStart.style.display = "none";
+
+  canvas.style.display = "block";
+
+  end.style.display = "none";
+
+  location.reload();
+}
+
 
 document.addEventListener('keydown', control);
 

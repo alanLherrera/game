@@ -46,4 +46,44 @@ h3{
   margin-top: 20px;
   margin-left: 20px;
 }
+#starter{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 200px;
+  height: 350px;
+  width: 350px;
+  padding: 50px;
+  text-align: center;
+  color: aliceblue;
+}
+#start a{
+  font-family: monospace;
+  font-size: 200px;
+  height: 350px;
+  width: 350px;
+  padding: 50px;
+  text-align: center;
+  color: aliceblue;
+  display: block;
+  display: inline-block;
+}
+#end{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 200px;
+  height: 350px;
+  width: 350px;
+  padding: 50px;
+  text-align: center;
+  color: rgb(255, 240, 240);
+}
+#end a{
+  font-family: monospace;
+  font-size: 200px;
+  height: 350px;
+  width: 350px;
+  padding: 50px;
+  text-align: center;
+  color: aliceblue;
+  display: block;
+  display: inline-block;
 
+}
